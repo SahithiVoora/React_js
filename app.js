@@ -1,10 +1,29 @@
-const parent=React.createElement("div",{id:"parent"},
-[React.createElement("div",{id:"child1"},
-[React.createElement("h1", {},"iam h1 tag"),React.createElement("h2",{},"iam a h2 tag")]),
-React.createElement("div",{id:"child2"},
-[React.createElement("h1", {},"iam h1 tag"),React.createElement("h2",{},"iam a h2 tag")])]);
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { jsx } from "react/jsx-runtime";
+const heading=React.createElement("h1",{"id":"heading"},"Iam react element");
+const root=ReactDOM.createRoot(document.getElementById("root"));
+const num=10000;
+const elem=<span>react span element</span>
 
-const heading = React.createElement("h1", {id:"heading"}, "hello world");
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
-console.log(parent);
+
+//this is to render react elements.
+// const HeadingComponent=()=>{
+//     return <h1>Iam react functional component</h1>;
+// }
+const HeadingComponent=() => (
+    
+     <h1>Iam react functional component</h1>
+     
+     
+);
+
+const jsxheading=(
+    <h1>{elem}
+    iam jsx heading
+    </h1> 
+    
+    );
+    
+// //if we want to render our component in html.the syntax follows
+root.render(jsxheading);
